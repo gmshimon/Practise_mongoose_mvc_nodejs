@@ -35,16 +35,16 @@ module.exports.getUser = async(req,res,next)=>{
 module.exports.getUserById = async(req,res,next)=>{
     try {
         const {id} = req.params;
-        console.log(id);
-        /* const user = await User.findById(id);
+        const user = await User.findById(id);
 
         res.status(200).json({
             status:'success',
             message:"Successfully fetched the data",
             data:user
-        }) */
+        }) 
+
     } catch (error) {
-        res.status.json({
+        res.status(400).json({
             status:'Failed',
             message:error.message
         })
